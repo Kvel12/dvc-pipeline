@@ -1,0 +1,54 @@
+stages:
+  # ETAPA 1: Descargar datos de Kaggle
+  download_data:
+    cmd: python download_data.py
+    outs:
+      - data/train.csv
+      - data/test.csv
+      - data/sample_submission.csv
+
+  # ETAPA 2: Preprocesamiento y análisis exploratorio
+  preprocess:
+    cmd: python preprocess.py
+    deps:
+      - data/train.csv
+      - data/test.csv
+      - params.yaml
+      - preprocess.py
+    params:
+      - thresholds
+    outs:
+      - data/train_processed.csv
+    plots:
+      - plots/distributions.png
+    metrics:
+      - metrics/preprocessing_stats.json:
+          cache: false
+
+  # ETAPA 3: Entrenamiento del modelo
+  train:
+    cmd: python train.py
+    deps:
+      - data/train_processed.csv
+      - train.py
+      - params.yaml
+    params:
+      - model
+      - split
+    outs:
+      - models/model.pkl
+      - models/scaler.pkl
+    metrics:
+      - metrics/train_metrics.json:
+          cache: false
+
+  # ETAPA 4: Predicción y generación de submission
+  predict:
+    cmd: python predict.py
+    deps:
+      - data/test.csv
+      - models/model.pkl
+      - models/scaler.pkl
+      - predict.py
+    outs:
+      - results/submission-v2.csv

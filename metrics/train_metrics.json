@@ -1,0 +1,28 @@
+{
+  "train": {
+    "TP": 7478,
+    "FP": 30,
+    "FN": 45,
+    "TN": 4447,
+    "precision": 0.9960042621204049,
+    "recall": 0.9940183437458461,
+    "f1_score": 0.9950103120218216,
+    "accuracy": 0.99375
+  },
+  "validation": {
+    "TP": 1873,
+    "FP": 5,
+    "FN": 8,
+    "TN": 1114,
+    "precision": 0.9973375931842385,
+    "recall": 0.9957469431153642,
+    "f1_score": 0.9965416334131418,
+    "accuracy": 0.9956666666666667
+  },
+  "features": [
+    "time",
+    "temperature",
+    "cpu_usage",
+    "gpu_usage"
+  ]
+}

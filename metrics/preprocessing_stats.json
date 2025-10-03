@@ -1,0 +1,9 @@
+{
+  "performance_mean": 0.4187003131708515,
+  "performance_threshold": 0.3349602505366812,
+  "temp_critica_pct": 0.0,
+  "cpu_critica_pct": 63.61333333333333,
+  "gpu_critica_pct": 63.64666666666666,
+  "performance_critica_pct": 52.24666666666666,
+  "fallos_pct": 62.693333333333335
+}

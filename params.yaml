@@ -1,0 +1,22 @@
+# Umbrales críticos
+thresholds:
+  temperature: 90
+  cpu_usage: 90
+  gpu_usage: 90
+  performance_drop: 0.8  # 80% de la media
+
+# Configuración del modelo
+model:
+  C: 0.5
+  solver: 'liblinear'
+  max_iter: 2000
+  random_state: 42
+
+# División de datos
+split:
+  train_size: 0.8
+  random_state: 42
+
+# Competencia
+competition:
+  name: 'devices-error-detection-acmud-2025'

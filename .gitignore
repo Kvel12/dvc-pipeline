@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Jupyter
+*.ipynb_checkpoints/
+.ipynb_checkpoints
+
+# DVC
+/data/*
+!/data/.gitignore
+/models/*
+!/models/.gitignore
+
+# Archivos temporales
+*.log
+*.pkl
+*.csv
+*.zip
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
